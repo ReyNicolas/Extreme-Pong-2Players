@@ -10,3 +10,6 @@ Unity 2021.1 o superior.
 ## Instalación
 Clonar el respositorio.
 Agrega el proyecto a Unity y poder desplegarlo en un build para PC.
+
+## Creditos
+Efectos de sonido por: [8-Bit Style Sound Effects - cabled_mess](https://assetstore.unity.com/packages/audio/sound-fx/8-bit-style-sound-effects-68228#content)
