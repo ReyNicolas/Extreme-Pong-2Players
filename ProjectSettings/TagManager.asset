@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Ball
+  - PowerDestroyer
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Post-Processing
-  - 
-  - 
+  - Powers
+  - PowerDestroyer
   - 
   - 
   - 

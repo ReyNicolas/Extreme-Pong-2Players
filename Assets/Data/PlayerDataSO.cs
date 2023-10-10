@@ -6,13 +6,13 @@ public class PlayerDataSO : ScriptableObject
 {
     public ReactiveProperty<bool> doubleSize = new ReactiveProperty<bool>(true);
     public ReactiveProperty<bool> doubleVelocity = new ReactiveProperty<bool>(true);
-    public ReactiveProperty<bool> teleport = new ReactiveProperty<bool>(true);
+    public ReactiveProperty<bool> shot = new ReactiveProperty<bool>(true);
 
 
     public void ResetPowers()
     {
         doubleSize.Value = true;
         doubleVelocity.Value = true;
-        teleport.Value = true;
+        shot.Value = true;
     }
 }

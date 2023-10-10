@@ -1,7 +1,7 @@
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] PlayerDataSO playerData;
     [SerializeField] float speed = 5f;
     [SerializeField] KeyCode keyUp;
     [SerializeField] KeyCode keyDown;
@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public PlayerDataSO GetPlayerData()
+    {
+        return playerData;
+    }
     void SetMovementLimits()
     {
         Camera mainCamera = Camera.main;
@@ -49,4 +53,6 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
     }
+
 }
+

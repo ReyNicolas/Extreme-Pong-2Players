@@ -1011,7 +1011,9 @@ GameObject:
   - component: {fileID: 473912531}
   - component: {fileID: 473912532}
   - component: {fileID: 473912528}
+  - component: {fileID: 473912534}
   - component: {fileID: 473912533}
+  - component: {fileID: 473912535}
   m_Layer: 0
   m_Name: PlayerLeft
   m_TagString: Player
@@ -1031,6 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed3a81c57c09f844825cdde49f10bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: fff3c1894a5a3434e9c12b1e713d7079, type: 2}
   speed: 10
   keyUp: 119
   keyDown: 115
@@ -1183,13 +1186,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 473912527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9756ce6d10081e46a22be85ee11df4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 797fa9ec0aa47034fa9b113a9ae5de31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: fff3c1894a5a3434e9c12b1e713d7079, type: 2}
-  doubleSizeKey: 120
-  doubleVelocityKey: 99
-  teleportKey: 118
+  key: 118
+  canUse:
+    value: 0
+--- !u!114 &473912534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473912527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5423c2c775d9c7f48a035c3df193e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 120
+  canUse:
+    value: 0
+  time: 5
+  size: 2
+--- !u!114 &473912535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473912527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d883c8b5e6e0c4c9d75cdece3bf28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 99
+  canUse:
+    value: 0
+  shotPrefab: {fileID: 2432396415570794994, guid: 6c38d42cf9920654fac35bb90a7088f3, type: 3}
 --- !u!1 &495868969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1669,7 @@ GameObject:
   - component: {fileID: 650285294}
   - component: {fileID: 650285293}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,8 +1691,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -200}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 350, y: -200}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650285293
 MonoBehaviour:
@@ -1679,7 +1714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nicolas.rey
+  m_text: darkreyn.itch.io
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2056,9 +2091,10 @@ GameObject:
   m_Component:
   - component: {fileID: 747188575}
   - component: {fileID: 747188574}
-  m_Layer: 0
+  - component: {fileID: 747188576}
+  m_Layer: 8
   m_Name: Limits
-  m_TagString: Untagged
+  m_TagString: PowerDestroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2134,6 +2170,47 @@ Transform:
   - {fileID: 458725384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &747188576
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747188573}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: 0.21932861}
+  - {x: 0, y: -0.2193286}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &796231382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,7 +3535,9 @@ GameObject:
   - component: {fileID: 1561681274}
   - component: {fileID: 1561681275}
   - component: {fileID: 1561681271}
+  - component: {fileID: 1561681277}
   - component: {fileID: 1561681276}
+  - component: {fileID: 1561681278}
   m_Layer: 0
   m_Name: PlayerRight
   m_TagString: Player
@@ -3478,6 +3557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed3a81c57c09f844825cdde49f10bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 0b4d28791133ad34f96a7798a4acdfd5, type: 2}
   speed: 10
   keyUp: 273
   keyDown: 274
@@ -3630,13 +3710,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561681270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9756ce6d10081e46a22be85ee11df4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 797fa9ec0aa47034fa9b113a9ae5de31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 0b4d28791133ad34f96a7798a4acdfd5, type: 2}
-  doubleSizeKey: 257
-  doubleVelocityKey: 259
-  teleportKey: 258
+  key: 259
+  canUse:
+    value: 0
+--- !u!114 &1561681277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561681270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5423c2c775d9c7f48a035c3df193e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 257
+  canUse:
+    value: 0
+  time: 5
+  size: 2
+--- !u!114 &1561681278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561681270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d883c8b5e6e0c4c9d75cdece3bf28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 258
+  canUse:
+    value: 0
+  shotPrefab: {fileID: 2432396415570794994, guid: 6c38d42cf9920654fac35bb90a7088f3, type: 3}
 --- !u!1 &1727006486
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,8 +5067,8 @@ SceneRoots:
   - {fileID: 473912530}
   - {fileID: 1255197087}
   - {fileID: 495868972}
-  - {fileID: 1397378689}
   - {fileID: 738396954}
   - {fileID: 1727006488}
   - {fileID: 796231386}
   - {fileID: 983572358}
+  - {fileID: 1397378689}
